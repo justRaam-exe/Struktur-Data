@@ -1,23 +1,27 @@
+# create a variable
 size = 6
 datasetZ = [None] * size
 top1 = -1
 top2 = size
 status = True
 
+# function to peek data in top 1
 def peek1(data):
     global top1, datasetZ
     if top1 == -1:
         print('Stack 1 Kosong')
     else:
         print('Top data stack 1 is ' + datasetZ[top1])
-        
+
+# function to peek data in top 2        
 def peek2(data):
     global top2, datasetZ
     if top2 == size:
         print('Stack 2 Kosong')
     else:
         print('Top data stack 2 is ' + datasetZ[top2])
-        
+
+# function to add data in stack 1        
 def push1(data):
     global top1, top2, datasetZ
     if top2 - top1 > 1:
@@ -26,7 +30,8 @@ def push1(data):
         peek1(data)
     else:
         print('Stack 1 Penuh')
-        
+
+# function to add data in stack 2
 def push2(data):
     global top1, top2, datasetZ
     if top2 - top1 > 1:
@@ -36,6 +41,7 @@ def push2(data):
     else:
         print('Stack 2 Penuh')
 
+# function to remove data stack 1
 def pop1(data):
     global top1, datasetZ
     if top1 == -1:
@@ -46,6 +52,7 @@ def pop1(data):
         top1 -= 1
         print('Data yang dihapus adalah ' + '[' + hapus_data + ']')
         
+# function to remove data stack 2
 def pop2(data):
     global top1, top2, datasetZ
     if top2 == size:
@@ -56,6 +63,7 @@ def pop2(data):
         top2 += 1
         print('Data yang dihapus adalah ' + hapus_data)
         
+# function to clear data stack 1
 def clear1(data):
     global top1, datasetZ
     if top1 == -1:
@@ -63,7 +71,8 @@ def clear1(data):
     else:
         for _ in range(top1 + 1):
             pop1(data)
-            
+
+# function to clear data stack 2
 def clear2(data):
     global top2, datasetZ
     if top2 == size:
@@ -71,7 +80,8 @@ def clear2(data):
     else:
         for _ in range(size - top2):
             pop2(data)
-        
+            
+# function to clear all data in both stacks
 def clear_data(data):
     global top1, top2, datasetZ
     if top1 == -1 and top2 == size:
@@ -83,7 +93,7 @@ def clear_data(data):
             pop2(data)
             
     
-
+# Main looping program 
 while status == True:        
     print('''
 Double Stack Program
