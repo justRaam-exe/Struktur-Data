@@ -42,6 +42,12 @@ class CircularStack:
             for _ in range(self.coun):
                 self.pop_data()
             print('Data dalam stack sudah dihapus semua')
+            
+    def display_top(self):
+        if self.empty_data():
+            print('Stack Kosong')
+        else:
+            print(f'Top stack adalah: {self.stack[self.top]}')
 
 def main():
     size = int(input('Masukan kapasitas stack: '))
@@ -67,6 +73,7 @@ def main():
             Circu_stack.clear_data()
         elif answer == '4':
             Circu_stack.display_data()
+            Circu_stack.display_top()
         elif answer == '5':
             print('God Bless You, Thank You')
             break
